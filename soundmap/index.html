@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>soundmap</title>
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/layout.css">
+    <meta name="description" content="a heatmap for music">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <script type="text/javascript" src="lib/analytics.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav id="logo">soundmap</nav>
+        <nav id="queue">queue</nav>
+        <nav id="popular">popular</nav>
+        <nav id="host">host</nav>
+        <nav id="connect">connect</nav>
+      </div>
+    </header>
+    <div id="sc-nav-login">
+      <div class="container">
+        <div class="sc-login-btn"><img id="sc-connect" src="images/btn-connect-sc-l.png"></div>
+      </div>
+    </div>
+    <main>
+      <div class="container">
+        <div class="playerBox">
+          <div class="userName"></div>
+          <h1 class="logoBox">soundmap<img src="images/spinner.gif" class="spinner">
+            <div class="intro">show musicians what you like about their music</div>
+          </h1>
+          <div class="player">
+            <span class="playtime">0:00</span>
+            <div class="artist"></div>
+            <div class="trackName"></div>
+            <div class="scrubber">
+              <div class="heatmap">
+                <div class="cells"></div>
+              </div>
+              <div class="line">
+                <canvas id="linewave" width="668" height="90"></canvas>
+              </div>
+              <div class="waveform"></div>
+              <div class="boxOmatic">
+                <div id="likechart" class="hideLikeGraph">
+                  <script type="text/javascript" src="javascripts/graph.js"></script>
+                </div>
+                <div class="markers"></div>
+              </div>
+            </div>
+            <div class="loadingScreen">loading...<img src="images/spinner.gif" class="spinner"></div>
+            <div class="controls">
+              <button id="audio" class="play"></button>
+              <button id="next" class="next"></button>
+              <button id="mute" class="mute"></button>
+              <button id="heart"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <section class="splash">
+      <div class="container">
+        <div class="pad"><img src="images/tweetpic.png"></div>
+      </div>
+    </section>
+    <section class="host">
+      <div class="container"></div>
+    </section>
+    <section class="queue">
+      <div class="container">
+        <h4>Music Queue</h4>
+        <div class="queueListContainer">
+          <ul class="queueList"></ul>
+        </div>
+      </div>
+    </section>
+    <section class="news hide">
+      <div class="container">
+        <div class="popularBox"></div>
+        <div class="recentBox"></div>
+      </div>
+    </section>
+    <div class="userBox">
+      <div class="container">
+        <div id="userFavorites"></div>
+      </div>
+    </div>
+    <div class="widgetBox">
+      <iframe id="sc-widget" src="http://w.soundcloud.com/player/?url=http://api.soundcloud.com/" width="100%" height="165" scrolling="no" frameborder="no"></iframe>
+    </div>
+    <div id="cheer">!!</div>
+  </body>
+  <script type="text/javascript" src="lib/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="lib/underscore-min.js"></script>
+  <script type="text/javascript" src="lib/soundcloud-sdk.js"></script>
+  <script type="text/javascript" src="lib/soundcloud-api.js"></script>
+  <script type="text/javascript" src="lib/moment.min.js"></script>
+  <script type="text/javascript" src="lib/d3.v3.min.js"></script>
+  <script type="text/javascript" src="javascripts/geolocation.js"></script>
+  <script type="text/javascript" src="javascripts/main.js"></script>
+</html>
